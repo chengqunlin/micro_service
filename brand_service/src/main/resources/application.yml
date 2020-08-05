@@ -1,0 +1,23 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /brand
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.200.128:8761/eureka/
+
+spring:
+  application:
+    name: brand_service
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    #这个参数是在建表的时候，将默认的存储引擎切换为 InnoDB 用的
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    #配置在日志中打印出执行的 SQL 语句信息。
+    show-sql: true
+
