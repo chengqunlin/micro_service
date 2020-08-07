@@ -1,5 +1,8 @@
 package com.cisco.icam.brand_service.entity;
 
+import lombok.Data;
+
+@Data
 public class Result {
     private Boolean flag;	// 是否成功
     private String message;	// 操作信息

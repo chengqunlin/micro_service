@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cisco.icam</groupId>
-    <artifactId>brand_service</artifactId>
+    <artifactId>specification_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>brand_service</name>
+    <name>specification_service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

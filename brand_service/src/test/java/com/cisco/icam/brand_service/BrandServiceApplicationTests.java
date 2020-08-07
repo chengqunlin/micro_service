@@ -1,5 +1,6 @@
 package com.cisco.icam.brand_service;
 
+import com.cisco.icam.brand_service.repository.BrandRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,12 @@ class BrandServiceApplicationTests {
 
     @Autowired
     private DataSource dataSource;
+    @Autowired
+    private BrandRepository brandRepository;
     @Test
     void contextLoads() {
         System.out.println(dataSource);
+        brandRepository.findById(22L);
     }
 
 }

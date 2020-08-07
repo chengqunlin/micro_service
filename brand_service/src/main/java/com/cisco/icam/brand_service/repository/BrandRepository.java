@@ -1,4 +1,4 @@
-package com.cisco.icam.brand_service.dao;
+package com.cisco.icam.brand_service.repository;
 
 import com.cisco.icam.brand_service.entity.Brand;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,6 +1,6 @@
 package com.cisco.icam.brand_service.service;
 
-import com.cisco.icam.brand_service.dao.BrandRepository;
+import com.cisco.icam.brand_service.repository.BrandRepository;
 import com.cisco.icam.brand_service.entity.PageResult;
 import com.cisco.icam.brand_service.entity.Brand;
 import org.apache.commons.lang.StringUtils;
@@ -51,8 +51,6 @@ public class BrandService {
         if(StringUtils.isNotBlank(firstChar)){
             example.setFirstChar(firstChar);
         }
-        example.setFirstChar(firstChar);
-        example.setName(name);
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withMatcher("firstChar", ExampleMatcher.GenericPropertyMatcher::contains)//模糊查询
                 .withMatcher("name", ExampleMatcher.GenericPropertyMatcher::contains)
