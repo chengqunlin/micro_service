@@ -6,6 +6,8 @@ import com.cisco.icam.specification_service.entity.Specification;
 import com.cisco.icam.specification_service.entity.SpecificationVo;
 import com.cisco.icam.specification_service.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +38,10 @@ public class SpecificationController {
     }
 
     @GetMapping("/findOne")
-    public SpecificationVo findOne(Long id){
+    public Object findOne(Long id){
+        if(id==null){
+            return new ResponseEntity<String>("Id can not be null", HttpStatus.BAD_REQUEST);
+        }
         return specificationService.findOne(id);
     }
 

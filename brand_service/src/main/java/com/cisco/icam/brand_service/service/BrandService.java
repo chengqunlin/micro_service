@@ -42,14 +42,14 @@ public class BrandService {
     }
 
     public PageResult search(Integer pageNum, Integer pageSize, Brand brand) {
-        String firstChar = brand.getFirstChar().trim();
-        String name = brand.getName().trim();
+        String firstChar = brand.getFirstChar();
+        String name = brand.getName();
         Brand example = new Brand();
         if(StringUtils.isNotBlank(name)){
-            example.setName(name);
+            example.setName(name.trim());
         }
         if(StringUtils.isNotBlank(firstChar)){
-            example.setFirstChar(firstChar);
+            example.setFirstChar(firstChar.trim());
         }
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withMatcher("firstChar", ExampleMatcher.GenericPropertyMatcher::contains)//模糊查询

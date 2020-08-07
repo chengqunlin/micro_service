@@ -10,7 +10,8 @@ eureka:
 
 spring:
   application:
-    name: specification_service
+    #Open Feign报错Service id not legal hostname的原因是服务名称不能带有下划线，可以使用中划线
+    name: specification-service
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
